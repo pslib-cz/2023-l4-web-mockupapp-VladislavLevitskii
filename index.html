@@ -4,36 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="images/The_Cat.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/The_Cat.png" type="image/x-icon">
     <title>CryptaCode</title>
 </head>
 <body>
     <header class="body__header">
-        <div class="nameandlogo">
-            <img src="./img/Logo.png" alt="Logo">
-            <h1><a href="#">CryptaCode</a></h1>
+        <div class="header">
+            <a href="#" class="nameandlogo">
+                <img src="./img/Logo.png" alt="Logo">
+                <h1>CryptaCode</h1>
+            </a>
+            <label class="header__navigation">
+                <p>Vybrat šifru</p>
+                <img src="./img/Arrow.svg" alt="Arrow">
+                <input id="check" class="checkbox" type="checkbox">
+            </label>
+            <nav class="header__navigation--invisible">
+                <ul>
+                    <li><a href="#1"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#1"><p>Vigenèrova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#1"><p>Hillova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#1"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#1"><p>Enigma</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#1"><p>RSA šifra</p></a><div class="header__navigation--underline"></div></li>
+                </ul>
+            </nav>
         </div>
-        <label class="header__navigation">
-            <p>Vybrat šifru</p>
-            <img src="./img/Arrow.svg" alt="Arrow">
-            <input id="check" class="checkbox" type="checkbox">
-        </label>
-        <nav class="header__navigation--invisible">
-            <ul>
-                <li><a href="#1"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
-                <li><a href="#1"><p>Vigenèrova šifra</p></a><div class="header__navigation--underline"></div></li>
-                <li><a href="#1"><p>Hillova šifra</p></a><div class="header__navigation--underline"></div></li>
-                <li><a href="#1"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
-                <li><a href="#1"><p>Enigma</p></a><div class="header__navigation--underline"></div></li>
-                <li><a href="#1"><p>RSA šifra</p></a><div class="header__navigation--underline"></div></li>
-            </ul>
-        </nav>
     </header>
-    <main>
-
+    <main class="cipher">
+        <h2>Caesarova šifra</h2>
+        <div class="inputs">
+            <textarea placeholder="Váš text"></textarea>
+            <textarea readonly placeholder="Text po šifrování"></textarea>
+        </div>
     </main>
-    <footer>
-      <p>This Typographic library was created by <a href="https://github.com/VladislavLevitskii"><strong>Levad</strong></a></p>
-    </footer>
 </body>
 </html>
