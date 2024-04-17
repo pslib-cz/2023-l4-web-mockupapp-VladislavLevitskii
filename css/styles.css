@@ -18,7 +18,7 @@ html {
 body {
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1300px 1fr;
+    grid-template-columns: 1fr 1200px 1fr;
 }
 
 a {
@@ -49,7 +49,6 @@ a {
 }
 
 .body__header {
-    width: -webkit-fill-available;
     display: grid;
     justify-content: space-between;
     padding: 15px 20px;
@@ -57,7 +56,7 @@ a {
     position: relative;
     z-index: 1;
     grid-column: 1 / 4;
-    grid-template-columns: 1fr 1300px 1fr;
+    grid-template-columns: 1fr 1200px 1fr;
 }
 
 .nameandlogo {
@@ -217,19 +216,16 @@ h1 {
     border-radius: 5px;
 }
 
-.buttonsforoperations {
+.dashboard {
     display: flex;
-    gap: 30px;
-    margin-top: 50px;
+    width: 549px;
+    justify-content: space-between;
 }
 
-.buttonsforoperations button {
-    padding: 20px 30px;
-    font-family: inherit;
-    background-color: var(--black);
-    color: var(--snow);
-    border: none;
-    cursor: pointer;
+.dashboard p {
+    margin: 0;
+    align-self: center;
+    font-size: 20px;
 }
 
 form {
@@ -238,9 +234,40 @@ form {
     margin-top: 30px; 
 }
 
-form input:nth-child(n+2):nth-child(-n+3) {
+form input:nth-child(3), form input:nth-child(4) {
     padding: 20px 30px;
     color: var(--snow);
     background-color: var(--black);
     font-family: inherit;
+    transition: .3s;
+}
+
+form input:nth-child(3):hover, form input:nth-child(4):hover {
+    background-color: var(--blackolive);
+    transition: .3s;
+}
+
+.buttons {
+    cursor: pointer;
+    width: 140px;
+}
+
+input[type=number] {
+    font-size: 18px;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--snow);
+    outline: none;
+    transition: .3s;
+}
+
+input[type=number]:hover {
+    transition: .3s;
+    background-color: var(--blackolive);
+}
+
+input::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+    height: 50px;
+    width: 200px;
+    background-color: var(--snow);
 }
