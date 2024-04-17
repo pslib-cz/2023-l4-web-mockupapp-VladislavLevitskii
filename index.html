@@ -34,9 +34,14 @@
     <main class="cipher">
         <h2>Caesarova šifra</h2>
         <div class="inputs">
-            <textarea placeholder="Váš text"></textarea>
-            <textarea readonly placeholder="Text po šifrování"></textarea>
+            <textarea placeholder="Váš text" name="text"></textarea>
+            <textarea readonly placeholder="Text po šifrování" name="text" class="textarea--second"></textarea>
         </div>
+        <form>
+                <input type="number" min="1" max="25" step="1" value="1" required>
+                <input type="submit" value="Šifrovat">
+                <input type="submit" value="Dešifrovat">
+        </form>
     </main>
 </body>
 </html>
