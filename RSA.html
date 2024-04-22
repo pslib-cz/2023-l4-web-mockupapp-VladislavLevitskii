@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./img/The_Cat.png" type="image/x-icon">
+    <title>CryptaCode</title>
+</head>
+<body>
+    <header class="body__header">
+        <div class="header">
+            <a href="./index.html" class="nameandlogo">
+                <img src="./img/Logo.png" alt="Logo">
+                <h1>CryptaCode</h1>
+            </a>
+            <label class="header__navigation">
+                <p>Vybrat šifru</p>
+                <img src="./img/Arrow.svg" alt="Arrow">
+                <input id="check" class="checkbox" type="checkbox">
+            </label>
+            <nav class="header__navigation--invisible">
+                <ul>
+                    <li><a href="./index.html"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./vigenerova.html"><p>Vigenèrova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./hillova.html"><p>Hillova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./playfair.html"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./enigma.html"><p>Enigma</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#"><p>RSA šifra</p></a><div class="header__navigation--underline"></div></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="cipher">
+        <h2>RSA šifra</h2>
+        <div class="inputs">
+            <div class="inputs__left">
+                <textarea id="originalText" placeholder="Váš text" name="text"></textarea>
+                <form class="dashboard" id="cipherForm">
+                    <input class="button--deletemat" type="button" value="Šifrovat - public key" onclick="encrypt()">
+                    <input class="button--deletemat" type="button" value="Dešifrovat - public key" onclick="decrypt()">
+                    <input class="button--deletemat" type="button" value="Šifrovat - private key" onclick="encrypt()">
+                    <input class="button--deletemat" type="button" value="Dešifrovat - private key" onclick="decrypt()">
+                    <div class="posun posun__rsa">
+                        <input class="button--deletemat" type="button" value="Vygenerovat náhodný key" onclick="randommatrix()">
+                        <select name="sizeofmatrix" id="sizeofmatrix" class="selectofmatrixes" style="width: 100px;">
+                            <option class="selectofmatrixes__option" value="515">515 bit</option>
+                            <option class="selectofmatrixes__option" value="1024">1024 bit</option>
+                            <option class="selectofmatrixes__option" value="2048">2048 bit</option>
+                            <option class="selectofmatrixes__option" value="3072">3072 bit</option>
+                            <option class="selectofmatrixes__option" value="4096">4096 bit</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <textarea id="resultText" readonly placeholder="Text po šifrování" name="text" class="textarea--second"></textarea>
+        </div>
+        <div class="inputs inputs__keys--rsa">
+            <textarea id="originalText" placeholder="Public key" name="text" class="inputs__keys--rsa--left"></textarea>
+            <textarea id="resultText" placeholder="Private key" name="text" class="textarea--second inputs__keys--rsa--left"></textarea>
+        </div>
+    </main>
+    <script src="./ciphers/vigener.js"></script>
+</body>
+</html>

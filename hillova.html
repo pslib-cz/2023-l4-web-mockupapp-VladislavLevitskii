@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./img/The_Cat.png" type="image/x-icon">
+    <title>CryptaCode</title>
+</head>
+<body>
+    <header class="body__header">
+        <div class="header">
+            <a href="./index.html" class="nameandlogo">
+                <img src="./img/Logo.png" alt="Logo">
+                <h1>CryptaCode</h1>
+            </a>
+            <label class="header__navigation">
+                <p>Vybrat šifru</p>
+                <img src="./img/Arrow.svg" alt="Arrow">
+                <input id="check" class="checkbox" type="checkbox">
+            </label>
+            <nav class="header__navigation--invisible">
+                <ul>
+                    <li><a href="./index.html"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./vigenerova.html"><p>Vigenèrova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#"><p>Hillova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./playfair.html"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./enigma.html"><p>Enigma</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./RSA.html"><p>RSA šifra</p></a><div class="header__navigation--underline"></div></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="cipher">
+        <h2>Hillova šifra</h2>
+        <div class="inputs">
+            <div class="inputs__left">
+                <textarea id="originalText" placeholder="Váš text" name="text"></textarea>
+                <form class="dashboard" id="cipherForm">
+                    <input class="buttons" type="button" value="Šifrovat" onclick="encrypt()">
+                    <input class="buttons" type="button" value="Dešifrovat" onclick="decrypt()">
+                    <div class="posun">
+                        <p>Key:</p>
+                        <select name="sizeofmatrix" id="sizeofmatrix" class="selectofmatrixes">
+                            <option class="selectofmatrixes__option" value="2×2">2 × 2</option>
+                            <option class="selectofmatrixes__option" value="3×3">3 × 3</option>
+                            <option class="selectofmatrixes__option" value="4×4">4 × 4</option>
+                            <option class="selectofmatrixes__option" value="5×5">5 × 5</option>
+                        </select>
+                        <div class="posun__hillgrid">
+                            <textarea id="keyhill1" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill2" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill3" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill4" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill5" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill6" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill7" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill8" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill9" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill10" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill11" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill12" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill13" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill14" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill15" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill16" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill17" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill18" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill19" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill20" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill21" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill22" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill23" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill24" name="text" class="textarea--hill"></textarea>
+                            <textarea id="keyhill25" name="text" class="textarea--hill"></textarea>
+                        </div>
+                    </div>
+                    <input class="buttons button--deletemat" type="button" value="Smazat matici" onclick="deletematrix()">
+                    <input class="buttons button--deletemat button--randommatrix" type="button" value="Vygenerovat náhodnou matici" onclick="randommatrix()">
+                </form>
+            </div>
+            <textarea id="resultText" readonly placeholder="Text po šifrování" name="text" class="textarea--second"></textarea>
+        </div>
+    </main>
+    <script src="./ciphers/hill.js"></script>
+</body>
+</html>

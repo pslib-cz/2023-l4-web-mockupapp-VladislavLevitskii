@@ -10,7 +10,7 @@
 <body>
     <header class="body__header">
         <div class="header">
-            <a href="#" class="nameandlogo">
+            <a href="./index.html" class="nameandlogo">
                 <img src="./img/Logo.png" alt="Logo">
                 <h1>CryptaCode</h1>
             </a>
@@ -21,10 +21,10 @@
             </label>
             <nav class="header__navigation--invisible">
                 <ul>
-                    <li><a href="#1"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./index.html"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
                     <li><a href="./vigenerova.html"><p>Vigenèrova šifra</p></a><div class="header__navigation--underline"></div></li>
                     <li><a href="./hillova.html"><p>Hillova šifra</p></a><div class="header__navigation--underline"></div></li>
-                    <li><a href="./playfair.html"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
                     <li><a href="./enigma.html"><p>Enigma</p></a><div class="header__navigation--underline"></div></li>
                     <li><a href="./RSA.html"><p>RSA šifra</p></a><div class="header__navigation--underline"></div></li>
                 </ul>
@@ -32,7 +32,7 @@
         </div>
     </header>
     <main class="cipher">
-        <h2>Caesarova šifra</h2>
+        <h2>Playfairova šifra</h2>
         <div class="inputs">
             <div class="inputs__left">
                 <textarea id="originalText" placeholder="Váš text" name="text"></textarea>
@@ -40,14 +40,14 @@
                     <input class="buttons" type="button" value="Šifrovat" onclick="encrypt()">
                     <input class="buttons" type="button" value="Dešifrovat" onclick="decrypt()">
                     <div class="posun">
-                        <p>Posun:</p>
-                        <input id="shiftAmount" type="number" min="1" max="25" step="1" value="1" required style="width: 64px; padding: 20px 5px;">
+                        <p>Key:</p>
+                        <textarea id="keyvigener" name="text" placeholder="Key" class="textarea--vigener"></textarea>
                     </div>
                 </form>
             </div>
             <textarea id="resultText" readonly placeholder="Text po šifrování" name="text" class="textarea--second"></textarea>
         </div>
     </main>
-    <script src="./ciphers/caesar.js"></script>
+    <script src="./ciphers/playfair.js"></script>
 </body>
 </html>

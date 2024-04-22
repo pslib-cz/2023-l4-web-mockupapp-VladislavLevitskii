@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./img/The_Cat.png" type="image/x-icon">
+    <title>CryptaCode</title>
+</head>
+<body>
+    <header class="body__header">
+        <div class="header">
+            <a href="./index.html" class="nameandlogo">
+                <img src="./img/Logo.png" alt="Logo">
+                <h1>CryptaCode</h1>
+            </a>
+            <label class="header__navigation">
+                <p>Vybrat šifru</p>
+                <img src="./img/Arrow.svg" alt="Arrow">
+                <input id="check" class="checkbox" type="checkbox">
+            </label>
+            <nav class="header__navigation--invisible">
+                <ul>
+                    <li><a href="./index.html"><p>Caesarova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./vigenerova.html"><p>Vigenèrova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./hillova.html"><p>Hillova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./playfair.html"><p>Playfairova šifra</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="#"><p>Enigma</p></a><div class="header__navigation--underline"></div></li>
+                    <li><a href="./RSA.html"><p>RSA šifra</p></a><div class="header__navigation--underline"></div></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="cipher">
+        <h2>Enigma M3</h2>
+        <div class="inputs">
+            <div class="inputs__left">
+                <textarea id="originalText" placeholder="Váš text" name="text"></textarea>
+                <form class="dashboard" id="cipherForm">
+                    <input class="buttons" type="button" value="Šifrovat" onclick="encrypt()">
+                    <input class="buttons" type="button" value="Dešifrovat" onclick="decrypt()">
+                    <div class="posun posun--grid">
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Rotor 1</label>
+                            <select name="selectenigma" id="selectenigma1" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">I</option>
+                                <option class="selectofmatrixes__option" value="2">II</option>
+                                <option class="selectofmatrixes__option" value="3">III</option>
+                                <option class="selectofmatrixes__option" value="4">IV</option>
+                                <option class="selectofmatrixes__option" value="5">V</option>
+                                <option class="selectofmatrixes__option" value="6">VI</option>
+                                <option class="selectofmatrixes__option" value="7">VII</option>
+                                <option class="selectofmatrixes__option" value="8">VIII</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Rotor 2</label>
+                            <select name="selectenigma" id="selectenigma2" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">I</option>
+                                <option class="selectofmatrixes__option" value="2">II</option>
+                                <option class="selectofmatrixes__option" value="3">III</option>
+                                <option class="selectofmatrixes__option" value="4">IV</option>
+                                <option class="selectofmatrixes__option" value="5">V</option>
+                                <option class="selectofmatrixes__option" value="6">VI</option>
+                                <option class="selectofmatrixes__option" value="7">VII</option>
+                                <option class="selectofmatrixes__option" value="8">VIII</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Rotor 3</label>
+                            <select name="selectenigma" id="selectenigma3" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">I</option>
+                                <option class="selectofmatrixes__option" value="2">II</option>
+                                <option class="selectofmatrixes__option" value="3">III</option>
+                                <option class="selectofmatrixes__option" value="4">IV</option>
+                                <option class="selectofmatrixes__option" value="5">V</option>
+                                <option class="selectofmatrixes__option" value="6">VI</option>
+                                <option class="selectofmatrixes__option" value="7">VII</option>
+                                <option class="selectofmatrixes__option" value="8">VIII</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Pozice 1</label>
+                            <select name="selectenigma" id="selectenigma4" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">1 A</option>
+                                <option class="selectofmatrixes__option" value="2">2 B</option>
+                                <option class="selectofmatrixes__option" value="3">3 C</option>
+                                <option class="selectofmatrixes__option" value="4">4 D</option>
+                                <option class="selectofmatrixes__option" value="5">5 E</option>
+                                <option class="selectofmatrixes__option" value="6">6 F</option>
+                                <option class="selectofmatrixes__option" value="7">7 G</option>
+                                <option class="selectofmatrixes__option" value="8">8 H</option>
+                                <option class="selectofmatrixes__option" value="9">9 I</option>
+                                <option class="selectofmatrixes__option" value="10">10 J</option>
+                                <option class="selectofmatrixes__option" value="11">11 K</option>
+                                <option class="selectofmatrixes__option" value="12">12 L</option>
+                                <option class="selectofmatrixes__option" value="13">13 M</option>
+                                <option class="selectofmatrixes__option" value="14">14 N</option>
+                                <option class="selectofmatrixes__option" value="15">15 O</option>
+                                <option class="selectofmatrixes__option" value="16">16 P</option>
+                                <option class="selectofmatrixes__option" value="17">17 Q</option>
+                                <option class="selectofmatrixes__option" value="18">18 R</option>
+                                <option class="selectofmatrixes__option" value="19">19 S</option>
+                                <option class="selectofmatrixes__option" value="20">20 T</option>
+                                <option class="selectofmatrixes__option" value="21">21 U</option>
+                                <option class="selectofmatrixes__option" value="22">22 V</option>
+                                <option class="selectofmatrixes__option" value="23">23 W</option>
+                                <option class="selectofmatrixes__option" value="24">24 X</option>
+                                <option class="selectofmatrixes__option" value="25">25 Y</option>
+                                <option class="selectofmatrixes__option" value="26">26 Z</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Pozice 2</label>
+                            <select name="selectenigma" id="selectenigma5" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">1 A</option>
+                                <option class="selectofmatrixes__option" value="2">2 B</option>
+                                <option class="selectofmatrixes__option" value="3">3 C</option>
+                                <option class="selectofmatrixes__option" value="4">4 D</option>
+                                <option class="selectofmatrixes__option" value="5">5 E</option>
+                                <option class="selectofmatrixes__option" value="6">6 F</option>
+                                <option class="selectofmatrixes__option" value="7">7 G</option>
+                                <option class="selectofmatrixes__option" value="8">8 H</option>
+                                <option class="selectofmatrixes__option" value="9">9 I</option>
+                                <option class="selectofmatrixes__option" value="10">10 J</option>
+                                <option class="selectofmatrixes__option" value="11">11 K</option>
+                                <option class="selectofmatrixes__option" value="12">12 L</option>
+                                <option class="selectofmatrixes__option" value="13">13 M</option>
+                                <option class="selectofmatrixes__option" value="14">14 N</option>
+                                <option class="selectofmatrixes__option" value="15">15 O</option>
+                                <option class="selectofmatrixes__option" value="16">16 P</option>
+                                <option class="selectofmatrixes__option" value="17">17 Q</option>
+                                <option class="selectofmatrixes__option" value="18">18 R</option>
+                                <option class="selectofmatrixes__option" value="19">19 S</option>
+                                <option class="selectofmatrixes__option" value="20">20 T</option>
+                                <option class="selectofmatrixes__option" value="21">21 U</option>
+                                <option class="selectofmatrixes__option" value="22">22 V</option>
+                                <option class="selectofmatrixes__option" value="23">23 W</option>
+                                <option class="selectofmatrixes__option" value="24">24 X</option>
+                                <option class="selectofmatrixes__option" value="25">25 Y</option>
+                                <option class="selectofmatrixes__option" value="26">26 Z</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Pozice 3</label>
+                            <select name="selectenigma" id="selectenigma6" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">1 A</option>
+                                <option class="selectofmatrixes__option" value="2">2 B</option>
+                                <option class="selectofmatrixes__option" value="3">3 C</option>
+                                <option class="selectofmatrixes__option" value="4">4 D</option>
+                                <option class="selectofmatrixes__option" value="5">5 E</option>
+                                <option class="selectofmatrixes__option" value="6">6 F</option>
+                                <option class="selectofmatrixes__option" value="7">7 G</option>
+                                <option class="selectofmatrixes__option" value="8">8 H</option>
+                                <option class="selectofmatrixes__option" value="9">9 I</option>
+                                <option class="selectofmatrixes__option" value="10">10 J</option>
+                                <option class="selectofmatrixes__option" value="11">11 K</option>
+                                <option class="selectofmatrixes__option" value="12">12 L</option>
+                                <option class="selectofmatrixes__option" value="13">13 M</option>
+                                <option class="selectofmatrixes__option" value="14">14 N</option>
+                                <option class="selectofmatrixes__option" value="15">15 O</option>
+                                <option class="selectofmatrixes__option" value="16">16 P</option>
+                                <option class="selectofmatrixes__option" value="17">17 Q</option>
+                                <option class="selectofmatrixes__option" value="18">18 R</option>
+                                <option class="selectofmatrixes__option" value="19">19 S</option>
+                                <option class="selectofmatrixes__option" value="20">20 T</option>
+                                <option class="selectofmatrixes__option" value="21">21 U</option>
+                                <option class="selectofmatrixes__option" value="22">22 V</option>
+                                <option class="selectofmatrixes__option" value="23">23 W</option>
+                                <option class="selectofmatrixes__option" value="24">24 X</option>
+                                <option class="selectofmatrixes__option" value="25">25 Y</option>
+                                <option class="selectofmatrixes__option" value="26">26 Z</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Ring 1</label>
+                            <select name="selectenigma" id="selectenigma7" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">1 A</option>
+                                <option class="selectofmatrixes__option" value="2">2 B</option>
+                                <option class="selectofmatrixes__option" value="3">3 C</option>
+                                <option class="selectofmatrixes__option" value="4">4 D</option>
+                                <option class="selectofmatrixes__option" value="5">5 E</option>
+                                <option class="selectofmatrixes__option" value="6">6 F</option>
+                                <option class="selectofmatrixes__option" value="7">7 G</option>
+                                <option class="selectofmatrixes__option" value="8">8 H</option>
+                                <option class="selectofmatrixes__option" value="9">9 I</option>
+                                <option class="selectofmatrixes__option" value="10">10 J</option>
+                                <option class="selectofmatrixes__option" value="11">11 K</option>
+                                <option class="selectofmatrixes__option" value="12">12 L</option>
+                                <option class="selectofmatrixes__option" value="13">13 M</option>
+                                <option class="selectofmatrixes__option" value="14">14 N</option>
+                                <option class="selectofmatrixes__option" value="15">15 O</option>
+                                <option class="selectofmatrixes__option" value="16">16 P</option>
+                                <option class="selectofmatrixes__option" value="17">17 Q</option>
+                                <option class="selectofmatrixes__option" value="18">18 R</option>
+                                <option class="selectofmatrixes__option" value="19">19 S</option>
+                                <option class="selectofmatrixes__option" value="20">20 T</option>
+                                <option class="selectofmatrixes__option" value="21">21 U</option>
+                                <option class="selectofmatrixes__option" value="22">22 V</option>
+                                <option class="selectofmatrixes__option" value="23">23 W</option>
+                                <option class="selectofmatrixes__option" value="24">24 X</option>
+                                <option class="selectofmatrixes__option" value="25">25 Y</option>
+                                <option class="selectofmatrixes__option" value="26">26 Z</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Ring 2</label>
+                            <select name="selectenigma" id="selectenigma8" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">1 A</option>
+                                <option class="selectofmatrixes__option" value="2">2 B</option>
+                                <option class="selectofmatrixes__option" value="3">3 C</option>
+                                <option class="selectofmatrixes__option" value="4">4 D</option>
+                                <option class="selectofmatrixes__option" value="5">5 E</option>
+                                <option class="selectofmatrixes__option" value="6">6 F</option>
+                                <option class="selectofmatrixes__option" value="7">7 G</option>
+                                <option class="selectofmatrixes__option" value="8">8 H</option>
+                                <option class="selectofmatrixes__option" value="9">9 I</option>
+                                <option class="selectofmatrixes__option" value="10">10 J</option>
+                                <option class="selectofmatrixes__option" value="11">11 K</option>
+                                <option class="selectofmatrixes__option" value="12">12 L</option>
+                                <option class="selectofmatrixes__option" value="13">13 M</option>
+                                <option class="selectofmatrixes__option" value="14">14 N</option>
+                                <option class="selectofmatrixes__option" value="15">15 O</option>
+                                <option class="selectofmatrixes__option" value="16">16 P</option>
+                                <option class="selectofmatrixes__option" value="17">17 Q</option>
+                                <option class="selectofmatrixes__option" value="18">18 R</option>
+                                <option class="selectofmatrixes__option" value="19">19 S</option>
+                                <option class="selectofmatrixes__option" value="20">20 T</option>
+                                <option class="selectofmatrixes__option" value="21">21 U</option>
+                                <option class="selectofmatrixes__option" value="22">22 V</option>
+                                <option class="selectofmatrixes__option" value="23">23 W</option>
+                                <option class="selectofmatrixes__option" value="24">24 X</option>
+                                <option class="selectofmatrixes__option" value="25">25 Y</option>
+                                <option class="selectofmatrixes__option" value="26">26 Z</option>
+                            </select>
+                        </div>
+                        <div class="enigma__mod">
+                            <label class="enigma__label" for="selectenigma">Ring 3</label>
+                            <select name="selectenigma" id="selectenigma9" class="selectofmatrixes">
+                                <option class="selectofmatrixes__option" value="1">1 A</option>
+                                <option class="selectofmatrixes__option" value="2">2 B</option>
+                                <option class="selectofmatrixes__option" value="3">3 C</option>
+                                <option class="selectofmatrixes__option" value="4">4 D</option>
+                                <option class="selectofmatrixes__option" value="5">5 E</option>
+                                <option class="selectofmatrixes__option" value="6">6 F</option>
+                                <option class="selectofmatrixes__option" value="7">7 G</option>
+                                <option class="selectofmatrixes__option" value="8">8 H</option>
+                                <option class="selectofmatrixes__option" value="9">9 I</option>
+                                <option class="selectofmatrixes__option" value="10">10 J</option>
+                                <option class="selectofmatrixes__option" value="11">11 K</option>
+                                <option class="selectofmatrixes__option" value="12">12 L</option>
+                                <option class="selectofmatrixes__option" value="13">13 M</option>
+                                <option class="selectofmatrixes__option" value="14">14 N</option>
+                                <option class="selectofmatrixes__option" value="15">15 O</option>
+                                <option class="selectofmatrixes__option" value="16">16 P</option>
+                                <option class="selectofmatrixes__option" value="17">17 Q</option>
+                                <option class="selectofmatrixes__option" value="18">18 R</option>
+                                <option class="selectofmatrixes__option" value="19">19 S</option>
+                                <option class="selectofmatrixes__option" value="20">20 T</option>
+                                <option class="selectofmatrixes__option" value="21">21 U</option>
+                                <option class="selectofmatrixes__option" value="22">22 V</option>
+                                <option class="selectofmatrixes__option" value="23">23 W</option>
+                                <option class="selectofmatrixes__option" value="24">24 X</option>
+                                <option class="selectofmatrixes__option" value="25">25 Y</option>
+                                <option class="selectofmatrixes__option" value="26">26 Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="inputs__right">
+                <textarea id="resultText" readonly placeholder="Text po šifrování" name="text" class="textarea--second"></textarea>
+                <div class="enigma__plugboard">
+                    <label for="text">Zásuvná deska</label>
+                    <textarea id="plugboard" name="text" placeholder="ab cd ef gh" class="textarea--enigma"></textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./ciphers/vigener.js"></script>
+</body>
+</html>
