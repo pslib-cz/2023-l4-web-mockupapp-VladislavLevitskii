@@ -43,7 +43,7 @@
                     <input class="button--deletemat" type="button" value="Dešifrovat - private key" onclick="decrypt()">
                     <div class="posun posun__rsa">
                         <input class="button--deletemat" type="button" value="Vygenerovat náhodný key" onclick="randommatrix()">
-                        <select name="sizeofmatrix" id="sizeofmatrix" class="selectofmatrixes" style="width: 100px;">
+                        <select name="sizeofmatrix" id="sizeofbits" class="selectofmatrixes" style="width: 100px;">
                             <option class="selectofmatrixes__option" value="515">515 bit</option>
                             <option class="selectofmatrixes__option" value="1024">1024 bit</option>
                             <option class="selectofmatrixes__option" value="2048">2048 bit</option>
@@ -56,10 +56,10 @@
             <textarea id="resultText" readonly placeholder="Text po šifrování" name="text" class="textarea--second"></textarea>
         </div>
         <div class="inputs inputs__keys--rsa">
-            <textarea id="originalText" placeholder="Public key" name="text" class="inputs__keys--rsa--left"></textarea>
-            <textarea id="resultText" placeholder="Private key" name="text" class="textarea--second inputs__keys--rsa--left"></textarea>
+            <textarea id="publickey" placeholder="Public key" name="text" class="inputs__keys--rsa--left"></textarea>
+            <textarea id="privatkey" placeholder="Private key" name="text" class="textarea--second inputs__keys--rsa--left"></textarea>
         </div>
     </main>
-    <script src="./ciphers/vigener.js"></script>
+    <script src="./ciphers/RSA.js"></script>
 </body>
 </html>
