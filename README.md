@@ -22,7 +22,7 @@ Doporučuji používat Microsoft Copilot nebo ChatGPT4 pro ulehčení práce.
 
 ### Caesarova šifra
 - Jednoduchá substituční šifra posunující každý znak v abecedě o pevný počet míst.
-- Popis, jak funguje šifra je [tady](https://www.dcode.fr/caesar-cipher), také se dá na tyto stránce ověřit správnost šifry
+- Popis, jak funguje šifra je [tady](https://www.dcode.fr/caesar-cipher), také se dá na této stránce ověřit správnost šifry
 
 ### Vigenerova šifra
 - Polyalphabetická substituční šifra, která používá klíč pro posunutí každého znaku v závislosti na jeho pozici.
